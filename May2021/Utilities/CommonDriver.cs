@@ -11,8 +11,25 @@ namespace May2021.Utilities
     class CommonDriver
     {
         // init webdriver
-        public static IWebDriver driver;
+        public IWebDriver driver;
 
-        
+        [OneTimeSetUp]
+        public void LoginToTurnUp()
+        {
+            // launch chrome browser
+            driver = new ChromeDriver(@"S:\May2021\May2021\");
+
+            // Create object for login page
+            LoginPage loginObj = new LoginPage();
+            loginObj.LoginSteps(driver);
+
+        }
+
+        [OneTimeTearDown]
+        public void TestClosure()
+        {
+            // closing down steps
+            driver.Quit();
+        }
     }
 }

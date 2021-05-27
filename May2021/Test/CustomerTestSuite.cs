@@ -11,7 +11,7 @@ namespace May2021
 {
     [TestFixture]
     [Parallelizable]
-    class Program : CommonDriver
+    class CustomerTestSuite : CommonDriver
     {
 
         //static void Main(string[] args)
@@ -21,30 +21,30 @@ namespace May2021
 
 
         [Test]
-        public void CreateTMTest()
+        public void CreateCompanyTest()
         {
 
             // Create object for home page
             HomePage homeObj = new HomePage();
-            homeObj.NavigateToTM(driver);
+            homeObj.NavigateToCompany(driver);
 
-            // Create object for TM page
-            TMPage tmObj = new TMPage();
-            tmObj.CreateTM(driver);
+            // Create object for Company page
+            CompanyPage companyObj = new CompanyPage();
+            companyObj.CreateCompany(driver);
 
         }
 
         [Test]
-        public void EditTMTest()
+        public void EditCompanyTest()
         {
 
             // Create object for home page
             HomePage homeObj = new HomePage();
-            homeObj.NavigateToTM(driver);
+            homeObj.NavigateToCompany(driver);
 
-            // Create object for TM page
-            TMPage tmObj = new TMPage();
-            tmObj.EditTM(driver);
+            // Create object for Company page
+            CompanyPage companyObj = new CompanyPage();
+            companyObj.EditCompany(driver);
         }
 
         [Test]
@@ -53,11 +53,11 @@ namespace May2021
 
             // Create object for home page
             HomePage homeObj = new HomePage();
-            homeObj.NavigateToTM(driver);
+            homeObj.NavigateToCompany(driver);
 
-            // Create object for TM page
-            TMPage tmObj = new TMPage();
-            tmObj.DeleteTM(driver);
+            // Create object for Company page
+            CompanyPage companyObj = new CompanyPage();
+            companyObj.DeleteCompany(driver);
         }
 
 
